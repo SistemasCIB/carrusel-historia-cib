@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra hstoria</title>
+    <title>Nuestra historia</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js" async></script>
+    <!-- <script src="index.js" async></script> -->
 </head>
 <body>
-
-    <h2 class="CIB_titulo">Nuestra historia</h2>
 
     <section class="CIB_section_container">
 
@@ -18,9 +16,9 @@
             <article class="CIB_foto">
 
                 <figure>
-                    <span>1974 - 1975</span>
+                    <span class="date">1974 - 1975</span>
 
-                    <img class="foto_historia" src="https://sebastian-alvarez-diaz.vercel.app/img/maquina.jpg"
+                    <img class="foto_historia" src="https://sistemascib.github.io/Nuestra_historia/img/1970.jpg"
                         alt="foto de historia" title="foto historia" width="100" height="100" loading="lazy" id="0">
 
                 </figure>
@@ -29,20 +27,49 @@
 
             <article class="CIB_texto">
 
-                <h4>Texto llamativo y corto</h4>
+                <h4 class="title">1970</h4>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium perspiciatis aspernatur sed
-                    sapiente totam reprehenderit praesentium, facilis alias in at odit voluptate culpa nemo voluptatem
-                    tenetur aperiam, amet est cupiditate. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Nesciunt perspiciatis, incidunt nam, reprehenderit error sequi omnis
+                <p class="description">
+                    La Corporación para Investigaciones Biológicas nace en 1970, gracias 3 hechos puntuales: la firma
+                    del acta de constitución y aprobación de los estatutos; la realización del Acta de Fundación, y el
+                    desarrollo del primer proyecto de investigación. Nuestro origen fue posible gracias al apoyo y
+                    acompañamiento de la Universidad de Antioquia y su Facultad de Medicina.
                 </p>
 
             </article>
 
             <div class="CIB_arrow">
-                <span class="izq">⬅</span>
-                <span class="der">➡</span>
+                <span class="izq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-big-left-line-filled" width="50" height="50"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#253786" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M9.586 4l-6.586 6.586a2 2 0 0 0 0 2.828l6.586 6.586a2 2 0 0 0 2.18 .434l.145 -.068a2 2 0 0 0 1.089 -1.78v-2.586h5a1 1 0 0 0 1 -1v-6l-.007 -.117a1 1 0 0 0 -.993 -.883l-5 -.001v-2.585a2 2 0 0 0 -3.414 -1.414z"
+                            stroke-width="0" fill="currentColor" />
+                        <path
+                            d="M4.415 12l6.585 -6.586v3.586l.007 .117a1 1 0 0 0 .993 .883l5 -.001v4l-5 .001a1 1 0 0 0 -1 1v3.586l-6.585 -6.586z"
+                            stroke-width="0" fill="currentColor" />
+                        <path
+                            d="M21 8a1 1 0 0 1 .993 .883l.007 .117v6a1 1 0 0 1 -1.993 .117l-.007 -.117v-6a1 1 0 0 1 1 -1z"
+                            stroke-width="0" fill="currentColor" />
+                    </svg>
+                </span>
+                <span class="der">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-big-right-line-filled" width="50" height="50"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#253786" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-4.999a1 1 0 0 0 -1 1v6l.007 .117a1 1 0 0 0 .993 .883l4.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z"
+                            stroke-width="0" fill="currentColor" />
+                        <path
+                            d="M3 8a1 1 0 0 1 .993 .883l.007 .117v6a1 1 0 0 1 -1.993 .117l-.007 -.117v-6a1 1 0 0 1 1 -1z"
+                            stroke-width="0" fill="currentColor" />
+                    </svg>
+                </span>
             </div>
 
         </div>
@@ -53,5 +80,261 @@
         </article>
 
     </section>
+
+    <script>
+
+        // datos de las imagenes
+        const imagenes = {
+            // 0: {
+            //   img: "https://youtu.be/B29M9JG8Q9o",
+            //   title: "Nuestra Historia",
+            //   description:
+            //     "CIB - Corporación para investigaciones biológicas",
+            //   date: "1970",
+            // },
+            1: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1970.jpg",
+                title: "1970",
+                description:
+                    "La Corporación para Investigaciones Biológicas nace en 1970, gracias 3 hechos puntuales: la firma del acta de constitución y aprobación de los estatutos; la realización del Acta de Fundación, y el desarrollo del primer proyecto de investigación. Nuestro origen fue posible gracias al apoyo y acompañamiento de la Universidad de Antioquia y su Facultad de Medicina.",
+                date: "1970",
+            },
+            2: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1974-1975.jpg",
+                title: "1974-1975",
+                description:
+                    "Se realiza la segunda edición del libro Fundamentos de Medicina, que pasa a estar bajo propiedad de la CIB.",
+                date: "1974-1975",
+            },
+            3: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img//1976.jpg",
+                title: "1976",
+                description:
+                    "Entra en funcionamiento nuestra sede en el Parque de Berrío, y nos dedicamos por completo a la publicación de los libros de medicina interna.",
+                date: "1976",
+            },
+            4: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img//1978.jpg",
+                title: "1978",
+                description:
+                    "Gracias a la asociación con el Hospital Pablo Tobón Uribe, nos constituimos como centro de investigación, con un laboratorio cuyos equipos fueron donados por la Dra. Charlotte Campbell, catedrática de Harvard. Es mismo año inauguramos el servicio de diagnóstico especializado en micología.",
+                date: "1978",
+            },
+            5: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1979-1980.jpg",
+                title: "1979-1980",
+                description:
+                    "Damos inicio a las secciones de inmunología, infectología pediátrica y parasitología. Posteriormente, la unidad de infectología pediátrica, creada por el Dr. Hugo Trujillo Soto, se convertiría en lo que hoy es la unidad de bacteriología y micobacterias.",
+                date: "1979-1980",
+            },
+            6: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1980.jpg",
+                title: "1980",
+                description:
+                    "Nace el club de revista del Dr. Rojas y se da la vinculación de médicos y bacteriólogos en su año rural.",
+                date: "1980",
+            },
+            7: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1983.jpeg",
+                title: "1983",
+                description:
+                    "Se realiza la primera edición del Manual de Terapéutica, uno de los textos médicos más exitosos en Latinoamérica.",
+                date: "1983",
+            },
+            8: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1985.jpeg",
+                title: "1985",
+                description:
+                    "Gracias a las gestiones realizadas con la Organización Panamericana de la Salud, se realiza una internacionalización del Fondo Editorial con la obra Fundamentos de Medicina.",
+                date: "1985",
+            },
+            9: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1989.jpg",
+                title: "1989",
+                description:
+                    "Incursionamos en la docencia a través de la formación de jóvenes investigadores y apoyo a las entidades de salud en su objeto institucional.",
+                date: "1989",
+            },
+            10: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1991-1992.jpg",
+                title: "1991-1992",
+                description:
+                    "Una vez finalizados sus estudios, varios investigadores se unen a los laboratorios de la CIB, lo que permite la creación de la Unidad de Biología Celular y Molecular.",
+                date: "1970-09-2020",
+            },
+            11: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1994.jpg",
+                title: "1994",
+                description:
+                    "Comienza la construcción de nuestra sede propia. Ese mismo año, creamos la línea de Cardiología con énfasis en hipertensión arterial y realizamos la primera edición del libro Fundamentos de Pediatría.",
+                date: "1994",
+            },
+            12: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/1998-2001.jpg",
+                title: "1998-2001",
+                description:
+                    "El trabajo conjunto con las universidades nos convierte en campo de práctica para sus estudiantes de pregrado y posgrado.",
+                date: "1998-2001",
+            },
+            13: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2003.jpg",
+                title: "2003",
+                description:
+                    "Creamos oficialmente la Unidad de Biodiversidad.",
+                date: "2003",
+            },
+            14: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2004.jpg",
+                title: "2004",
+                description:
+                    "El Centro de Excelencia en Tuberculosis es establecido por Colciencias y firmamos más acuerdos de cooperación con instituciones nacionales e internacionales.",
+                date: "2004",
+            },
+            15: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2006.jpg",
+                title: "2006",
+                description:
+                    "Junto con la Universidad de Antioquia y la Universidad Nacional de Colombia, logramos nuestra primera patente.",
+                date: "2006",
+            },
+            16: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2009.jpg",
+                title: "2009",
+                description:
+                    "Recibimos la visita del Premio Nobel de Medicina y Fisiología de 1993, Sir Richard Roberts. Ese mismo años obtenemos los certificados de ICONTEC ISO 9001 e IQNet.",
+                date: "2009",
+            },
+            17: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2010FOTO1.jpg",
+                title: "2010",
+                description:
+                    "Nuevos PHd se vinculan a nuestras distintas unidades de investigación. En convenio con la Universidad del Rosario, abrimos la línea de investigación de Bioinformática y abrimos el Centro Clínico y de Investigación SICOR.",
+                date: "2010",
+            },
+            18: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2010FOTO2.jpg",
+                title: "2010",
+                description:
+                    "Este mismo año nuestra Corporación fue considerada como el mejor centro de investigación del país, en el estudio Caracterización de Centros Autónomos de Investigación y Desarrollo Tecnológico, desarrollado por el Observatorio Colombiano de Ciencia y Tecnología.",
+                date: "2010",
+            },
+            19: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2017.png",
+                title: "2017",
+                description:
+                    "La Universidad de Santander se vincula como socio de la CIB.",
+                date: "2017",
+            },
+            20: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2018.jpg",
+                title: "2018",
+                description:
+                    "La CIB es reconocida como centro de investigación por cinco años más. Esta distinción nos consolida como una institución que aporta a la generación de conocimiento en nuestro país. El reconocimiento lo otorga la Política Nacional de Actores del Sistema Nacional de Ciencia, Tecnología e Innovación (SNCTeI).",
+                date: "2018",
+            },
+            21: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2019.jpeg",
+                title: "Orden al Mérito Don Juan del Corral, grado Plata.",
+                description:
+                    "Ceremonia de entrega de la distinción Orden al Mérito Don Juan del Corral, grado Plata, a la Corporación para Investigaciones Biológicas por sus 49 años de promover investigación sostenible al servicio de la vida. Gracias al Concejo de Medellín y al concejal Ricardo León Yepez Pérez por este gran reconocimiento.",
+                date: "2019",
+            },
+            22: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2020.png",
+                title: "2020",
+                description:
+                    "Mediante Acuerdo municipal N°39 de 1998, el Concejo de Medellín creó la condecoración Orquídea Concejo de Medellín, máximo reconocimiento entregado por la Corporación a personas, entidades o instituciones nacionales o extranjeras que en desarrollo de sus actividades agroindustriales, científicas, tecnológicas, deportivas, ecológicas y cívicas, educativas y culturales, empresariales y humanas, así como de defensa de los animales, se destaquen en el ámbito regional, nacional y/o internacional, como aporte a la humanidad, a nuestra cultura y a nuestra ciudad.",
+                date: "2020",
+            },
+            23: {
+                img: "https://sistemascib.github.io/Nuestra_historia/img/2021.png",
+                title: "2021",
+                description:
+                    "Colombiano Ejemplar 2021. La CIB Medellín recibió el reconocimiento al Colombiano ejemplar 2021 en la categoría Ciencia y Tecnología. Seguimos trabajando arduamente para fortalecer nuestro propósito superior y contribuir al desarrollo de nuestra región: “Promover investigación sostenible al servicio de la vida”. #lacienciaalserviciodelavida#ElColombianoEjemplar2021",
+                date: "2021",
+            },
+        };
+
+        // Datos a recuperar del html
+        const foto = document.querySelector(".foto_historia");
+        const title = document.querySelector(".title");
+        const description = document.querySelector(".description");
+        const date = document.querySelector(".date");
+        const containerImages = document.querySelector(".CIB_miniaturas");
+
+        // esta funcion recibe el indice de la foto para cambiar la informacion
+        function cambiarDate(indice) {
+            foto.setAttribute("src", imagenes[indice]["img"]);
+            foto.setAttribute("id", indice);
+
+            description.textContent = imagenes[indice]["description"];
+            title.textContent = imagenes[indice]["title"];
+            date.textContent = imagenes[indice]["date"];
+        }
+
+        window.indice; //variable global en el codigo
+
+        // esta funcion recibe lado y indice, cambia la informacion dependiendo la flecha pulsada
+
+        function pasar(lado, indice) {
+            let num = parseInt(indice);
+
+            if ((num === 0 && lado === "izq") || (num === 1 && lado === "izq"))
+                indice = 1;
+            if (num > 1 && lado === "izq") indice--;
+
+            if (num >= 1 && lado === "der" && num < Object.values(imagenes).length)
+                indice++;
+            if (num === 0 && lado === "der") indice = 2;
+
+            cambiarDate(indice);
+        }
+
+        // recupera el evento click en la flecha izquierda
+        document.querySelector(".izq").addEventListener("click", (e) => {
+            e.preventDefault();
+            pasar("izq", foto.id);
+        });
+
+        // recupera el evento click en la flecha derecha
+        document.querySelector(".der").addEventListener("click", (e) => {
+            e.preventDefault();
+            pasar("der", foto.id);
+        });
+
+        window.contador = 1; // contador global para los indices
+
+        // iteratua entre todas las imagenes y crea la miniatura de las mismas
+        Object.values(imagenes).forEach((item) => {
+            let nodo = `
+      <img 
+      class="miniatura"
+      src="${item["img"]}" 
+      alt="${item["title"]}" 
+      title="${item["title"]}"
+      width="100"
+      height="100"
+      loading="lazy"
+      id="${contador}"
+      >
+  `;
+
+            containerImages.innerHTML += nodo; // lo incrustamos en el html
+            contador++; // sumamos 1 para el id de las imagenes
+        });
+
+        // añade el envento click en cada miniatura de las imagenes
+        document.querySelectorAll(".miniatura").forEach((item) => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                cambiarDate(item.getAttribute("id"));
+                val = item.getAttribute("id");
+            });
+        });
+
+
+    </script>
+
 </body>
 </html>

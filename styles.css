@@ -5,12 +5,6 @@
 }
 
 
-.CIB_titulo {
-    text-align: center;
-    color: var(--principal);
-    font-size: 2.3rem;
-}
-
 .CIB_section_container * {
     margin: 0px;
     padding: 0px;
@@ -20,6 +14,8 @@
     &.CIB_principal {
         position: relative;
         display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 25px;
 
         & .CIB_foto{
@@ -44,8 +40,10 @@
                 aspect-ratio: 10 / 7;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 border-radius: 10px;
+                /* box-shadow: 0px 0px 5px black; */
+
             }
 
         }
@@ -55,12 +53,12 @@
         & .CIB_texto {
             width: 50%;
             height: 100%;
-            padding: 20px;
+            padding: 25px;
 
 
             h4 {
                 color: var(--principal);
-                font-size: 1.4rem;
+                font-size: 2.2rem;
                 margin: 20px 0px 10px;
             }
 
@@ -68,6 +66,19 @@
             p {
                 text-align: justify;
                 line-height: normal;
+                font-size: 1.1rem;
+                color: #606263;
+    
+            }
+
+            @media (width <= 700px) {
+                 h4 {
+                    font-size: 1.6rem;
+                 }
+
+                 p {
+                    font-size: 1rem;
+                 }
             }
         }
     }
@@ -81,15 +92,19 @@
         overflow-y: hidden;
         overflow-x: scroll;
         /* scrollbar-width: none; */
-        cursor: grab;
+        cursor: pointer;
+        scrollbar-width: 20px;
+        scrollbar-color: var(--secundario) transparent;
 
         & img {
-            user-select: none; /* Deshabilita la selección de la imagen */
-            pointer-events:none; /* Evita que la imagen capture eventos del mouse */
+            /* user-select: none !important; Deshabilita la selección de la imagen
+            pointer-events:none; Evita que la imagen capture eventos del mouse */
             width: 220px;
             height: 100px;
             object-fit: cover;
+            aspect-ratio: 10/2;
             border-radius: 20px;
+            margin: 10px 0px;
         }
     }
 
@@ -131,12 +146,26 @@
 
     .izq,
     .der{
-        background-color: #0090d6;
-        width: 40px;
-        height: 40px;
+        background-color: var(--secundario);
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 5px;
         text-align: center;
-        padding: 9px;
         border-radius: 50%;
         cursor: pointer;
+        transition: background-color, transform 0.30s ease-in-out;
+
+        & svg{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .izq:hover,
+    .der:hover{
+        background-color: var(--principal);
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.1);
     }
 }
