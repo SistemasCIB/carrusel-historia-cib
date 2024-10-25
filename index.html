@@ -12,11 +12,23 @@
     <section class="CIB_section_container">
 
         <div class="CIB_principal">
+
+
+            <!-- video default-->
+            <article class="CIB_video" id="CIB_video">
+                <iframe width="560" height="420" src="https://www.youtube.com/embed/B29M9JG8Q9o?si=voc8WP5Egxhn_os2"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="default-video"></iframe>
+            </article>
+            <!-- fin video default-->
+
+
             <!-- Seccion de la foto con el texto-->
             <article class="CIB_foto">
 
                 <figure>
-                    <span class="date">1974 - 1975</span>
+                    <span class="date">1970</span>
 
                     <img class="foto_historia" src="https://sistemascib.github.io/Nuestra_historia/img/1970.jpg"
                         alt="foto de historia" title="foto historia" width="100" height="100" loading="lazy" id="0">
@@ -81,17 +93,9 @@
 
     </section>
 
-    <script>
-
-        // datos de las imagenes
+    <script async>
+        // Datos de las imágenes
         const imagenes = {
-            // 0: {
-            //   img: "https://youtu.be/B29M9JG8Q9o",
-            //   title: "Nuestra Historia",
-            //   description:
-            //     "CIB - Corporación para investigaciones biológicas",
-            //   date: "1970",
-            // },
             1: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img/1970.jpg",
                 title: "1970",
@@ -104,7 +108,7 @@
                 title: "1974-1975",
                 description:
                     "Se realiza la segunda edición del libro Fundamentos de Medicina, que pasa a estar bajo propiedad de la CIB.",
-                date: "1974-1975",
+                date: "1974",
             },
             3: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img//1976.jpg",
@@ -125,7 +129,7 @@
                 title: "1979-1980",
                 description:
                     "Damos inicio a las secciones de inmunología, infectología pediátrica y parasitología. Posteriormente, la unidad de infectología pediátrica, creada por el Dr. Hugo Trujillo Soto, se convertiría en lo que hoy es la unidad de bacteriología y micobacterias.",
-                date: "1979-1980",
+                date: "1979",
             },
             6: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img/1980.jpg",
@@ -160,7 +164,7 @@
                 title: "1991-1992",
                 description:
                     "Una vez finalizados sus estudios, varios investigadores se unen a los laboratorios de la CIB, lo que permite la creación de la Unidad de Biología Celular y Molecular.",
-                date: "1970-09-2020",
+                date: "1991",
             },
             11: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img/1994.jpg",
@@ -174,13 +178,12 @@
                 title: "1998-2001",
                 description:
                     "El trabajo conjunto con las universidades nos convierte en campo de práctica para sus estudiantes de pregrado y posgrado.",
-                date: "1998-2001",
+                date: "1998",
             },
             13: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img/2003.jpg",
                 title: "2003",
-                description:
-                    "Creamos oficialmente la Unidad de Biodiversidad.",
+                description: "Creamos oficialmente la Unidad de Biodiversidad.",
                 date: "2003",
             },
             14: {
@@ -221,8 +224,7 @@
             19: {
                 img: "https://sistemascib.github.io/Nuestra_historia/img/2017.png",
                 title: "2017",
-                description:
-                    "La Universidad de Santander se vincula como socio de la CIB.",
+                description: "La Universidad de Santander se vincula como socio de la CIB.",
                 date: "2017",
             },
             20: {
@@ -250,91 +252,95 @@
                 img: "https://sistemascib.github.io/Nuestra_historia/img/2021.png",
                 title: "2021",
                 description:
-                    "Colombiano Ejemplar 2021. La CIB Medellín recibió el reconocimiento al Colombiano ejemplar 2021 en la categoría Ciencia y Tecnología. Seguimos trabajando arduamente para fortalecer nuestro propósito superior y contribuir al desarrollo de nuestra región: “Promover investigación sostenible al servicio de la vida”. #lacienciaalserviciodelavida#ElColombianoEjemplar2021",
+                    "Colombiano Ejemplar 2021. La CIB Medellín recibió el reconocimiento al Colombiano ejemplar 2021 en la categoría Ciencia y Tecnología. Seguimos trabajando arduamente para fortalecer nuestro propósito superior y contribuir al desarrollo de nuestra región: “Promover investigación sostenible al servicio de la vida”. #lacienciaalserviciodelavida #ElColombianoEjemplar2021",
                 date: "2021",
             },
         };
 
-        // Datos a recuperar del html
+        // Elementos del DOM
+        const videoElement = document.getElementById("CIB_video");
+        const fotoElement = document.querySelector(".CIB_foto");
         const foto = document.querySelector(".foto_historia");
         const title = document.querySelector(".title");
         const description = document.querySelector(".description");
         const date = document.querySelector(".date");
         const containerImages = document.querySelector(".CIB_miniaturas");
 
-        // esta funcion recibe el indice de la foto para cambiar la informacion
+        let currentIndex = 0; // 0 represents the video, 1 and above represent images
+
+        // Función para cambiar entre video e imágenes
         function cambiarDate(indice) {
-            foto.setAttribute("src", imagenes[indice]["img"]);
-            foto.setAttribute("id", indice);
+            if (indice === 0) {
+                videoElement.style.display = "block";
+                fotoElement.style.display = "none";
+                title.textContent = "Nuestra Historia";
+                description.textContent = "CIB - Corporación para investigaciones biológicas";
+                date.textContent = "";
+            } else {
+                videoElement.style.display = "none";
+                fotoElement.style.display = "block";
+                const imageData = imagenes[indice];
+                foto.setAttribute("src", imageData.img);
+                foto.setAttribute("id", indice);
+                title.textContent = imageData.title;
+                description.textContent = imageData.description;
+                date.textContent = imageData.date;
+            }
 
-            description.textContent = imagenes[indice]["description"];
-            title.textContent = imagenes[indice]["title"];
-            date.textContent = imagenes[indice]["date"];
-        }
-
-        window.indice; //variable global en el codigo
-
-        // esta funcion recibe lado y indice, cambia la informacion dependiendo la flecha pulsada
-
-        function pasar(lado, indice) {
-            let num = parseInt(indice);
-
-            if ((num === 0 && lado === "izq") || (num === 1 && lado === "izq"))
-                indice = 1;
-            if (num > 1 && lado === "izq") indice--;
-
-            if (num >= 1 && lado === "der" && num < Object.values(imagenes).length)
-                indice++;
-            if (num === 0 && lado === "der") indice = 2;
-
-            cambiarDate(indice);
-        }
-
-        // recupera el evento click en la flecha izquierda
-        document.querySelector(".izq").addEventListener("click", (e) => {
-            e.preventDefault();
-            pasar("izq", foto.id);
-        });
-
-        // recupera el evento click en la flecha derecha
-        document.querySelector(".der").addEventListener("click", (e) => {
-            e.preventDefault();
-            pasar("der", foto.id);
-        });
-
-        window.contador = 1; // contador global para los indices
-
-        // iteratua entre todas las imagenes y crea la miniatura de las mismas
-        Object.values(imagenes).forEach((item) => {
-            let nodo = `
-      <img 
-      class="miniatura"
-      src="${item["img"]}" 
-      alt="${item["title"]}" 
-      title="${item["title"]}"
-      width="100"
-      height="100"
-      loading="lazy"
-      id="${contador}"
-      >
-  `;
-
-            containerImages.innerHTML += nodo; // lo incrustamos en el html
-            contador++; // sumamos 1 para el id de las imagenes
-        });
-
-        // añade el envento click en cada miniatura de las imagenes
-        document.querySelectorAll(".miniatura").forEach((item) => {
-            item.addEventListener("click", (e) => {
-                e.preventDefault();
-
-                cambiarDate(item.getAttribute("id"));
-                val = item.getAttribute("id");
+            // Actualizar la miniatura activa
+            document.querySelectorAll(".miniatura").forEach((thumb) => {
+                thumb.classList.remove("active");
             });
+            if (indice > 0) {
+                const activeThumb = document.getElementById(`thumb-${indice}`);
+                activeThumb.classList.add("active");
+                activeThumb.scrollIntoView({
+                    behavior: "smooth",
+                    inline: "center",
+                    block: "nearest",
+                });
+            }
+
+            currentIndex = indice;
+        }
+
+        // Función para pasar entre contenidos
+        function pasar(direccion) {
+            const totalContenidos = Object.keys(imagenes).length + 1; // +1 for the video
+            let nuevoIndice;
+
+            if (direccion === "izq") {
+                nuevoIndice = currentIndex > 0 ? currentIndex - 1 : totalContenidos - 1;
+            } else {
+                nuevoIndice = currentIndex < totalContenidos - 1 ? currentIndex + 1 : 0;
+            }
+
+            cambiarDate(nuevoIndice);
+        }
+
+        // Eventos para las flechas
+        document.querySelector(".izq").addEventListener("click", () => pasar("izq"));
+        document.querySelector(".der").addEventListener("click", () => pasar("der"));
+
+        // Generar miniaturas
+        Object.entries(imagenes).forEach(([indice, item]) => {
+            const miniatura = document.createElement("span");
+            miniatura.className = "fechas_miniaturas";
+            // miniatura.src = item.img;
+            // miniatura.alt = item.title;
+            miniatura.title = item.title;
+            // miniatura.loading = "lazy";
+            miniatura.id = `thumb-${indice}`;
+            miniatura.textContent = item.date
+
+            miniatura.addEventListener("click", () => cambiarDate(parseInt(indice)));
+
+            containerImages.appendChild(miniatura);
         });
 
+        // Inicializar con el video
+        cambiarDate(0);
 
     </script>
-
 </body>
 </html>
