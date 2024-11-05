@@ -1,4 +1,4 @@
-// Datos de las imágenes
+// Datos de las imágenes que se cargaran en las miniaturas
 const imagenes = {
   1: {
     img: "https://sistemascib.github.io/Nuestra_historia/img/1970.jpg",
@@ -230,10 +230,7 @@ document.querySelector(".der").addEventListener("click", () => pasar("der"));
 Object.entries(imagenes).forEach(([indice, item]) => {
   const miniatura = document.createElement("span");
   miniatura.className = "fechas_miniaturas";
-  // miniatura.src = item.img;
-  // miniatura.alt = item.title;
   miniatura.title = item.title;
-  // miniatura.loading = "lazy";
   miniatura.id = `thumb-${indice}`;
   miniatura.textContent = item.date
 

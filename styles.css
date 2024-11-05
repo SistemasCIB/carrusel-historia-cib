@@ -129,24 +129,6 @@
             scrollbar-color: var(--principal) transparent;
         }
 
-        /* & img {
-            width: 220px;
-            height: 100px;
-            object-fit: cover;
-            aspect-ratio: 10/2;
-            border-radius: 20px;
-            margin: 10px 0px;
-            transition: transform 0.50s ease-in;
-            aspect-ratio: 12 /9;
-            
-            
-            
-            &:hover{
-                transition: transform 0.30s ease-in-out;
-                transform: scale(1.1);
-            }
-        } */
-
     }
 
 
